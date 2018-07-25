@@ -1,0 +1,10 @@
+rename j1 J1
+rename j2 J2
+rename j3 J3
+rename j4 J4
+rename j5 J5
+rename s1 S1
+rename s2 S2
+rename s3 S3
+rename s4 S4
+rename s5 S5
