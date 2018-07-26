@@ -1,14 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <interface>
   <object class="tk.Frame" id="probSelect">
-    <property name="background">#95a5a6</property>
+    <property name="background">#5a6465</property>
     <property name="borderwidth">4</property>
-    <property name="cursor">arrow</property>
-    <property name="height">1000</property>
-    <property name="padx">20</property>
-    <property name="pady">20</property>
+    <property name="padx">94</property>
+    <property name="pady">93</property>
     <property name="relief">raised</property>
-    <property name="width">0</property>
     <layout>
       <property name="column">0</property>
       <property name="propagate">True</property>
@@ -237,9 +234,9 @@
     </child>
     <child>
       <object class="tk.Label" id="juniorProblemsLabel">
-        <property name="background">#95a5a6</property>
+        <property name="background">#5a6465</property>
         <property name="font">{Microsoft Sans Serif} 26 {}</property>
-        <property name="foreground">#2980B9</property>
+        <property name="foreground">#1e3a9b</property>
         <property name="text" translatable="yes">Junior Problems</property>
         <layout>
           <property name="column">0</property>
@@ -252,9 +249,12 @@
     </child>
     <child>
       <object class="tk.Label" id="seniorProblemsLabel">
-        <property name="background">#95a5a6</property>
+        <property name="background">#5a6465</property>
         <property name="font">{Microsoft Sans Serif} 26 {}</property>
-        <property name="foreground">#2980B9</property>
+        <property name="foreground">#1e3a9b</property>
+        <property name="height">0</property>
+        <property name="height">0</property>
+        <property name="state">normal</property>
         <property name="text" translatable="yes">Senior Problems</property>
         <layout>
           <property name="column">0</property>
@@ -269,7 +269,9 @@
       <object class="ttk.Combobox" id="yearSelector">
         <property name="state">readonly</property>
         <property name="textvariable">int:yearSelected</property>
+        <property name="validate">none</property>
         <property name="values">2018 2017 2016 2015 2014 2013 2012</property>
+        <property name="width">5</property>
         <layout>
           <property name="column">0</property>
           <property name="columnspan">5</property>
@@ -279,8 +281,12 @@
       </object>
     </child>
   </object>
-  <object class="ttk.Frame" id="testBench">
-    <property name="borderwidth">20</property>
+  <object class="tk.Frame" id="testBench">
+    <property name="background">#5a6465</property>
+    <property name="borderwidth">4</property>
+    <property name="height">200</property>
+    <property name="padx">20</property>
+    <property name="pady">20</property>
     <property name="relief">raised</property>
     <layout>
       <property name="column">0</property>
@@ -365,10 +371,14 @@
     </child>
     <child>
       <object class="tk.Button" id="backButton">
-        <property name="font">{Microsoft Sans Serif} 12 {}</property>
+        <property name="command">back</property>
+        <property name="font">{Microsoft Sans Serif} 14 {}</property>
+        <property name="padx">16</property>
         <property name="text" translatable="yes">Back</property>
         <layout>
           <property name="column">0</property>
+          <property name="padx">8</property>
+          <property name="pady">8</property>
           <property name="propagate">True</property>
           <property name="row">0</property>
           <property name="sticky">nw</property>
