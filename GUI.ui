@@ -3,8 +3,8 @@
   <object class="tk.Frame" id="probSelect">
     <property name="background">#5a6465</property>
     <property name="borderwidth">4</property>
-    <property name="padx">94</property>
-    <property name="pady">93</property>
+    <property name="padx">10</property>
+    <property name="pady">35</property>
     <property name="relief">raised</property>
     <layout>
       <property name="column">0</property>
@@ -13,49 +13,77 @@
       <rows>
         <row id="0">
           <property name="pad">0</property>
-          <property name="weight">1</property>
+          <property name="weight">0</property>
         </row>
         <row id="1">
+          <property name="pad">0</property>
           <property name="weight">1</property>
         </row>
         <row id="2">
-          <property name="weight">1</property>
+          <property name="pad">0</property>
+          <property name="weight">2</property>
         </row>
         <row id="3">
+          <property name="pad">0</property>
           <property name="weight">1</property>
         </row>
         <row id="4">
-          <property name="weight">1</property>
+          <property name="pad">0</property>
+          <property name="weight">2</property>
         </row>
       </rows>
       <columns>
         <column id="0">
-          <property name="pad">30</property>
-          <property name="weight">1</property>
+          <property name="pad">35</property>
+          <property name="weight">3</property>
         </column>
         <column id="1">
-          <property name="pad">30</property>
+          <property name="pad">24</property>
           <property name="weight">1</property>
+        </column>
+        <column id="10">
+          <property name="pad">35</property>
+          <property name="weight">3</property>
         </column>
         <column id="2">
-          <property name="pad">30</property>
-          <property name="weight">1</property>
+          <property name="pad">15</property>
+          <property name="weight">2</property>
         </column>
         <column id="3">
-          <property name="pad">30</property>
+          <property name="pad">24</property>
           <property name="weight">1</property>
         </column>
         <column id="4">
-          <property name="pad">30</property>
+          <property name="pad">15</property>
+          <property name="weight">2</property>
+        </column>
+        <column id="5">
+          <property name="pad">24</property>
+          <property name="weight">1</property>
+        </column>
+        <column id="6">
+          <property name="pad">15</property>
+          <property name="weight">2</property>
+        </column>
+        <column id="7">
+          <property name="pad">24</property>
+          <property name="weight">1</property>
+        </column>
+        <column id="8">
+          <property name="pad">15</property>
+          <property name="weight">2</property>
+        </column>
+        <column id="9">
+          <property name="pad">24</property>
           <property name="weight">1</property>
         </column>
       </columns>
     </layout>
     <child>
       <object class="tk.Button" id="selectJ1">
-        <property name="activebackground">#1ABC9C</property>
+        <property name="activebackground">#16A085</property>
         <property name="activeforeground">#FFFFFF</property>
-        <property name="background">#16A085</property>
+        <property name="background">#1ABC9C</property>
         <property name="borderwidth">4</property>
         <property name="command">J1</property>
         <property name="font">{Microsoft Sans Serif} 15 {}</property>
@@ -64,7 +92,7 @@
         <property name="padx">12</property>
         <property name="text" translatable="yes">1</property>
         <layout>
-          <property name="column">0</property>
+          <property name="column">1</property>
           <property name="propagate">True</property>
           <property name="row">2</property>
         </layout>
@@ -72,9 +100,9 @@
     </child>
     <child>
       <object class="tk.Button" id="selectJ2">
-        <property name="activebackground">#1ABC9C</property>
+        <property name="activebackground">#16A085</property>
         <property name="activeforeground">#FFFFFF</property>
-        <property name="background">#16A085</property>
+        <property name="background">#1ABC9C</property>
         <property name="borderwidth">4</property>
         <property name="command">J2</property>
         <property name="font">{Microsoft Sans Serif} 15 {}</property>
@@ -82,7 +110,7 @@
         <property name="padx">12</property>
         <property name="text" translatable="yes">2</property>
         <layout>
-          <property name="column">1</property>
+          <property name="column">3</property>
           <property name="propagate">True</property>
           <property name="row">2</property>
         </layout>
@@ -90,9 +118,9 @@
     </child>
     <child>
       <object class="tk.Button" id="selectJ3">
-        <property name="activebackground">#1ABC9C</property>
+        <property name="activebackground">#16A085</property>
         <property name="activeforeground">#FFFFFF</property>
-        <property name="background">#16A085</property>
+        <property name="background">#1ABC9C</property>
         <property name="borderwidth">4</property>
         <property name="command">J3</property>
         <property name="font">{Microsoft Sans Serif} 15 {}</property>
@@ -100,7 +128,7 @@
         <property name="padx">12</property>
         <property name="text" translatable="yes">3</property>
         <layout>
-          <property name="column">2</property>
+          <property name="column">5</property>
           <property name="propagate">True</property>
           <property name="row">2</property>
         </layout>
@@ -108,9 +136,9 @@
     </child>
     <child>
       <object class="tk.Button" id="selectJ4">
-        <property name="activebackground">#1ABC9C</property>
+        <property name="activebackground">#16A085</property>
         <property name="activeforeground">#FFFFFF</property>
-        <property name="background">#16A085</property>
+        <property name="background">#1ABC9C</property>
         <property name="borderwidth">4</property>
         <property name="command">J4</property>
         <property name="font">{Microsoft Sans Serif} 15 {}</property>
@@ -118,7 +146,7 @@
         <property name="padx">12</property>
         <property name="text" translatable="yes">4</property>
         <layout>
-          <property name="column">3</property>
+          <property name="column">7</property>
           <property name="propagate">True</property>
           <property name="row">2</property>
         </layout>
@@ -126,9 +154,9 @@
     </child>
     <child>
       <object class="tk.Button" id="selectJ5">
-        <property name="activebackground">#1ABC9C</property>
+        <property name="activebackground">#16A085</property>
         <property name="activeforeground">#FFFFFF</property>
-        <property name="background">#16A085</property>
+        <property name="background">#1ABC9C</property>
         <property name="borderwidth">4</property>
         <property name="command">J5</property>
         <property name="font">{Microsoft Sans Serif} 15 {}</property>
@@ -136,7 +164,7 @@
         <property name="padx">12</property>
         <property name="text" translatable="yes">5</property>
         <layout>
-          <property name="column">4</property>
+          <property name="column">9</property>
           <property name="propagate">True</property>
           <property name="row">2</property>
         </layout>
@@ -144,33 +172,15 @@
     </child>
     <child>
       <object class="tk.Button" id="selectS1">
-        <property name="activebackground">#1ABC9C</property>
+        <property name="activebackground">#16A085</property>
         <property name="activeforeground">#FFFFFF</property>
-        <property name="background">#16A085</property>
+        <property name="background">#1ABC9C</property>
         <property name="borderwidth">4</property>
         <property name="command">S1</property>
         <property name="font">{Microsoft Sans Serif} 15 {}</property>
         <property name="foreground">#FFFFFF</property>
         <property name="padx">12</property>
         <property name="text" translatable="yes">1</property>
-        <layout>
-          <property name="column">0</property>
-          <property name="propagate">True</property>
-          <property name="row">4</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Button" id="selectS2">
-        <property name="activebackground">#1ABC9C</property>
-        <property name="activeforeground">#FFFFFF</property>
-        <property name="background">#16A085</property>
-        <property name="borderwidth">4</property>
-        <property name="command">S2</property>
-        <property name="font">{Microsoft Sans Serif} 15 {}</property>
-        <property name="foreground">#FFFFFF</property>
-        <property name="padx">12</property>
-        <property name="text" translatable="yes">2</property>
         <layout>
           <property name="column">1</property>
           <property name="propagate">True</property>
@@ -179,34 +189,16 @@
       </object>
     </child>
     <child>
-      <object class="tk.Button" id="selectS3">
-        <property name="activebackground">#1ABC9C</property>
+      <object class="tk.Button" id="selectS2">
+        <property name="activebackground">#16A085</property>
         <property name="activeforeground">#FFFFFF</property>
-        <property name="background">#16A085</property>
+        <property name="background">#1ABC9C</property>
         <property name="borderwidth">4</property>
-        <property name="command">S3</property>
+        <property name="command">S2</property>
         <property name="font">{Microsoft Sans Serif} 15 {}</property>
         <property name="foreground">#FFFFFF</property>
         <property name="padx">12</property>
-        <property name="text" translatable="yes">3</property>
-        <layout>
-          <property name="column">2</property>
-          <property name="propagate">True</property>
-          <property name="row">4</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Button" id="selectS4">
-        <property name="activebackground">#1ABC9C</property>
-        <property name="activeforeground">#FFFFFF</property>
-        <property name="background">#16A085</property>
-        <property name="borderwidth">4</property>
-        <property name="command">S4</property>
-        <property name="font">{Microsoft Sans Serif} 15 {}</property>
-        <property name="foreground">#FFFFFF</property>
-        <property name="padx">12</property>
-        <property name="text" translatable="yes">4</property>
+        <property name="text" translatable="yes">2</property>
         <layout>
           <property name="column">3</property>
           <property name="propagate">True</property>
@@ -215,10 +207,46 @@
       </object>
     </child>
     <child>
-      <object class="tk.Button" id="selectS5">
-        <property name="activebackground">#1ABC9C</property>
+      <object class="tk.Button" id="selectS3">
+        <property name="activebackground">#16A085</property>
         <property name="activeforeground">#FFFFFF</property>
-        <property name="background">#16A085</property>
+        <property name="background">#1ABC9C</property>
+        <property name="borderwidth">4</property>
+        <property name="command">S3</property>
+        <property name="font">{Microsoft Sans Serif} 15 {}</property>
+        <property name="foreground">#FFFFFF</property>
+        <property name="padx">12</property>
+        <property name="text" translatable="yes">3</property>
+        <layout>
+          <property name="column">5</property>
+          <property name="propagate">True</property>
+          <property name="row">4</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Button" id="selectS4">
+        <property name="activebackground">#16A085</property>
+        <property name="activeforeground">#FFFFFF</property>
+        <property name="background">#1ABC9C</property>
+        <property name="borderwidth">4</property>
+        <property name="command">S4</property>
+        <property name="font">{Microsoft Sans Serif} 15 {}</property>
+        <property name="foreground">#FFFFFF</property>
+        <property name="padx">12</property>
+        <property name="text" translatable="yes">4</property>
+        <layout>
+          <property name="column">7</property>
+          <property name="propagate">True</property>
+          <property name="row">4</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Button" id="selectS5">
+        <property name="activebackground">#16A085</property>
+        <property name="activeforeground">#FFFFFF</property>
+        <property name="background">#1ABC9C</property>
         <property name="borderwidth">4</property>
         <property name="command">S5</property>
         <property name="font">{Microsoft Sans Serif} 15 {}</property>
@@ -226,7 +254,7 @@
         <property name="padx">12</property>
         <property name="text" translatable="yes">5</property>
         <layout>
-          <property name="column">4</property>
+          <property name="column">9</property>
           <property name="propagate">True</property>
           <property name="row">4</property>
         </layout>
@@ -240,7 +268,7 @@
         <property name="text" translatable="yes">Junior Problems</property>
         <layout>
           <property name="column">0</property>
-          <property name="columnspan">5</property>
+          <property name="columnspan">11</property>
           <property name="pady">15</property>
           <property name="propagate">True</property>
           <property name="row">1</property>
@@ -258,7 +286,7 @@
         <property name="text" translatable="yes">Senior Problems</property>
         <layout>
           <property name="column">0</property>
-          <property name="columnspan">5</property>
+          <property name="columnspan">11</property>
           <property name="pady">15</property>
           <property name="propagate">True</property>
           <property name="row">3</property>
@@ -274,9 +302,31 @@
         <property name="width">5</property>
         <layout>
           <property name="column">0</property>
-          <property name="columnspan">5</property>
+          <property name="columnspan">11</property>
           <property name="propagate">True</property>
           <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Frame" id="placeHolder">
+        <property name="background">#5a6465</property>
+        <layout>
+          <property name="column">10</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="rowspan">5</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Frame" id="placeHolder2">
+        <property name="background">#5a6465</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="rowspan">5</property>
         </layout>
       </object>
     </child>

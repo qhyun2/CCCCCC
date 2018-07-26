@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter.font import Font
 import pygubu
 import codeCompare
 
@@ -9,6 +10,11 @@ class Application:
     probSelect = object()
     testBench = object()
     master = object()
+
+    #fonts
+    headerFont = object()
+    textFont = object()
+    buttonFont = object()
 
     def __init__(self, master):
 
@@ -22,6 +28,27 @@ class Application:
         self.probSelect = self.builder.get_object('probSelect', self.master)
         self.testBench = self.builder.get_object('testBench', self.master)
         self.yearSelector = self.builder.get_object('yearSelector', self.master)
+
+        #mainwindow config
+        #self.master.bind('<Configure>', self.resize)
+        self.master.minsize(809, 500)
+
+        #init and place fonts
+        self.headerFont = Font(family="Microsoft Sans Serif", size=35)
+        self.textFont = Font(family="Microsoft Sans Serif", size=20)
+        self.buttonFont = Font(family="Microsoft Sans Serif", size=27)
+        self.yearSelector.config(font=self.textFont)
+
+        #configure expansion
+        self.probSelect.grid(sticky=(tk.N, tk.S, tk.E, tk.W))
+        self.testBench.grid(sticky=(tk.N, tk.S, tk.E, tk.W))
+        master.rowconfigure(0, weight=1)
+        master.columnconfigure(0, weight=1)
+
+        for i in self.probSelect.winfo_children():
+            if isinstance(i, tk.Button):
+                i.config(font=self.buttonFont)
+                i.grid(sticky=(tk.N, tk.S, tk.E, tk.W))
         
         #show window
         self.showSelector()
@@ -62,8 +89,8 @@ root = tk.Tk()
 application = Application(root)
 
 #app settings
-root.resizable(False, False)
-root.title('CCCCCC - Select Quesoaeaotion')
+#root.resizable(False, False)
+
 
 #codeCompare.test("2018q3sol.exe", "windows_data\S3\s3.3-02.in", b'temp')
 
