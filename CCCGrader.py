@@ -66,6 +66,7 @@ class Application:
     terminalScroller = object()
     testContainer = object()
     outputSelector = object()
+    filePicker = object()
     testControls = object()
     selectionButtons = object()
 
@@ -94,6 +95,7 @@ class Application:
         self.testControls = self.builder.get_object('testControls', self.master)
         self.outputSelector = self.builder.get_object('outputSelector', self.master)
         self.selectionButtons = self.builder.get_object('selectionButtons', self.master)
+        self.filePicker = self.builder.get_object('filePicker', self.master)
 
         """mainwindow config"""
         self.master.minsize(1000, 600)
@@ -112,6 +114,7 @@ class Application:
         self.testBench.grid(sticky=(tk.N, tk.S, tk.E, tk.W))
         self.terminalScroller.grid(sticky=(tk.N, tk.S, tk.E, tk.W))
         self.testContainer.grid(sticky=(tk.N, tk.S, tk.E, tk.W))
+        self.selectionButtons.grid(sticky=(tk.N, tk.S, tk.E, tk.W))
 
 
         #apply font and sticky settings
@@ -129,6 +132,8 @@ class Application:
         for i in self.selectionButtons.winfo_children():
             if isinstance(i, tk.Button):
                 i.config(font=self.textFont)
+            i.grid(sticky=(tk.N, tk.S, tk.E, tk.W))
+                 
 
 
         self.outputSelector.grid(sticky=(tk.E, tk.W))
@@ -166,10 +171,10 @@ class Application:
     #question has been selected
     def selectionMade(self, question):
         self.testBench.tkraise() 
-        yearSelected = self.yearSelector.get()
+        yearSelected = str(self.yearSelector.get())
         questionSelected = question
-        self.master.title("CCCCCC - " +  str(yearSelected) + " " + questionSelected)
-        fileList = glob.glob1('./data/' + str(yearSelected) + '/' + questionSelected + '/', '*.in')
+        self.master.title("CCCCCC - " +  yearSelected + " " + questionSelected)
+        fileList = glob.glob1('./data/' + yearSelected + '/' + questionSelected + '/', '*.in')
         nameList = []
         
         for filename in fileList:
@@ -177,6 +182,10 @@ class Application:
             nameList.append(name)
 
         self.tcm = TestCaseManager(nameList, self.testContainer)
+
+        #update filename in file selector
+        filelocation = os.path.abspath(os.path.curdir) + "\\" + yearSelected + questionSelected + ".cpp"
+        self.builder.tkvariables.__getitem__('codeFile').set(filelocation)
     
     def test(self):
         print("Testing All")

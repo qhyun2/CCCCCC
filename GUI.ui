@@ -17,25 +17,28 @@
         </row>
         <row id="1">
           <property name="pad">0</property>
-          <property name="weight">1</property>
+          <property name="weight">2</property>
         </row>
         <row id="2">
           <property name="pad">0</property>
-          <property name="weight">2</property>
+          <property name="weight">1</property>
         </row>
         <row id="3">
           <property name="pad">0</property>
-          <property name="weight">1</property>
+          <property name="weight">2</property>
         </row>
         <row id="4">
           <property name="pad">0</property>
-          <property name="weight">2</property>
+          <property name="weight">1</property>
+        </row>
+        <row id="5">
+          <property name="weight">10</property>
         </row>
       </rows>
       <columns>
         <column id="0">
           <property name="pad">35</property>
-          <property name="weight">3</property>
+          <property name="weight">5</property>
         </column>
         <column id="1">
           <property name="pad">24</property>
@@ -43,7 +46,7 @@
         </column>
         <column id="10">
           <property name="pad">35</property>
-          <property name="weight">3</property>
+          <property name="weight">5</property>
         </column>
         <column id="2">
           <property name="pad">15</property>
@@ -113,6 +116,16 @@
           <property name="propagate">True</property>
           <property name="row">0</property>
           <property name="rowspan">5</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="placeHolder3">
+        <layout>
+          <property name="column">0</property>
+          <property name="columnspan">11</property>
+          <property name="propagate">True</property>
+          <property name="row">5</property>
         </layout>
       </object>
     </child>
@@ -349,7 +362,7 @@
         <row id="1">
           <property name="minsize">0</property>
           <property name="pad">25</property>
-          <property name="weight">3</property>
+          <property name="weight">5</property>
         </row>
         <row id="2">
           <property name="pad">25</property>
@@ -362,19 +375,23 @@
       <columns>
         <column id="0">
           <property name="pad">50</property>
-          <property name="weight">0</property>
+          <property name="weight">1</property>
         </column>
         <column id="1">
           <property name="pad">0</property>
-          <property name="weight">1</property>
+          <property name="weight">11</property>
         </column>
       </columns>
     </layout>
     <child>
       <object class="tk.Button" id="backButton">
+        <property name="activebackground">#16A085</property>
+        <property name="activeforeground">#FFFFFF</property>
+        <property name="background">#1ABC9C</property>
         <property name="borderwidth">2</property>
         <property name="command">back</property>
         <property name="font">{Microsoft Sans Serif} 14 {}</property>
+        <property name="foreground">#FFFFFF</property>
         <property name="padx">16</property>
         <property name="text" translatable="yes">Back</property>
         <layout>
@@ -383,6 +400,7 @@
           <property name="pady">8</property>
           <property name="propagate">True</property>
           <property name="row">0</property>
+          <property name="sticky">nw</property>
         </layout>
       </object>
     </child>
@@ -406,41 +424,40 @@
           <property name="row">1</property>
         </layout>
         <child>
-          <object class="pygubu.builder.widgets.pathchooserinput" id="filePicker">
-            <property name="type">file</property>
-            <layout>
-              <property name="column">0</property>
-              <property name="pady">16</property>
-              <property name="propagate">True</property>
-              <property name="row">1</property>
-            </layout>
-          </object>
-        </child>
-        <child>
           <object class="tk.Button" id="test">
+            <property name="activebackground">#16A085</property>
+            <property name="activeforeground">#FFFFFF</property>
+            <property name="background">#1ABC9C</property>
             <property name="command">test</property>
+            <property name="foreground">#FFFFFF</property>
             <property name="padx">20</property>
             <property name="pady">8</property>
             <property name="text" translatable="yes">  Test All   </property>
             <layout>
               <property name="column">0</property>
+              <property name="columnspan">2</property>
               <property name="pady">16</property>
               <property name="propagate">True</property>
-              <property name="row">2</property>
+              <property name="row">0</property>
             </layout>
           </object>
         </child>
         <child>
           <object class="tk.Button" id="testSelected">
+            <property name="activebackground">#16A085</property>
+            <property name="activeforeground">#FFFFFF</property>
+            <property name="background">#1ABC9C</property>
             <property name="command">testSel</property>
+            <property name="foreground">#FFFFFF</property>
             <property name="padx">20</property>
             <property name="pady">8</property>
             <property name="text" translatable="yes">Test Selected</property>
             <layout>
               <property name="column">0</property>
+              <property name="columnspan">2</property>
               <property name="pady">16</property>
               <property name="propagate">True</property>
-              <property name="row">3</property>
+              <property name="row">1</property>
             </layout>
           </object>
         </child>
@@ -498,19 +515,47 @@
         <layout>
           <property name="column">0</property>
           <property name="columnspan">2</property>
-          <property name="pady">10</property>
+          <property name="pady">30</property>
           <property name="propagate">True</property>
           <property name="row">2</property>
+          <columns>
+            <column id="0">
+              <property name="weight">8</property>
+            </column>
+            <column id="1">
+              <property name="weight">1</property>
+            </column>
+            <column id="2">
+              <property name="weight">1</property>
+            </column>
+            <column id="3">
+              <property name="weight">1</property>
+            </column>
+          </columns>
         </layout>
         <child>
-          <object class="tk.Button" id="none">
-            <property name="borderwidth">2</property>
-            <property name="command">deselectAll</property>
-            <property name="font">{Microsoft Sans Serif} 12 {}</property>
-            <property name="pady">8</property>
-            <property name="text" translatable="yes">Deselect All</property>
+          <object class="pygubu.builder.widgets.pathchooserinput" id="filePicker">
+            <property name="textvariable">string:codeFile</property>
+            <property name="type">file</property>
             <layout>
               <property name="column">0</property>
+              <property name="padx">20</property>
+              <property name="pady">16</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="createFile">
+            <property name="activebackground">#16A085</property>
+            <property name="activeforeground">#FFFFFF</property>
+            <property name="background">#1ABC9C</property>
+            <property name="borderwidth">2</property>
+            <property name="foreground">#FFFFFF</property>
+            <property name="text" translatable="yes">Create</property>
+            <layout>
+              <property name="column">1</property>
               <property name="padx">5</property>
               <property name="propagate">True</property>
               <property name="row">0</property>
@@ -519,13 +564,36 @@
         </child>
         <child>
           <object class="tk.Button" id="all">
+            <property name="activebackground">#16A085</property>
+            <property name="activeforeground">#FFFFFF</property>
+            <property name="background">#1ABC9C</property>
             <property name="borderwidth">2</property>
             <property name="command">selectAll</property>
             <property name="font">{Microsoft Sans Serif} 12 {}</property>
+            <property name="foreground">#FFFFFF</property>
             <property name="pady">8</property>
-            <property name="text" translatable="yes">Select All</property>
+            <property name="text" translatable="yes"> Select All </property>
             <layout>
-              <property name="column">1</property>
+              <property name="column">2</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="none">
+            <property name="activebackground">#16A085</property>
+            <property name="activeforeground">#FFFFFF</property>
+            <property name="background">#1ABC9C</property>
+            <property name="borderwidth">2</property>
+            <property name="command">deselectAll</property>
+            <property name="font">{Microsoft Sans Serif} 12 {}</property>
+            <property name="foreground">#FFFFFF</property>
+            <property name="pady">8</property>
+            <property name="text" translatable="yes">Deselect All</property>
+            <layout>
+              <property name="column">3</property>
               <property name="padx">5</property>
               <property name="propagate">True</property>
               <property name="row">0</property>
