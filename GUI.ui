@@ -80,6 +80,58 @@
       </columns>
     </layout>
     <child>
+      <object class="ttk.Combobox" id="yearSelector">
+        <property name="state">readonly</property>
+        <property name="textvariable">int:yearSelected</property>
+        <property name="validate">none</property>
+        <property name="values">2018 2017 2016 2015 2014 2013 2012</property>
+        <property name="width">5</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="columnspan">11</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Frame" id="placeHolder">
+        <property name="background">#5a6465</property>
+        <layout>
+          <property name="column">10</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="rowspan">5</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Frame" id="placeHolder2">
+        <property name="background">#5a6465</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="rowspan">5</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Label" id="juniorProblemsLabel">
+        <property name="background">#5a6465</property>
+        <property name="font">{Microsoft Sans Serif} 26 {}</property>
+        <property name="foreground">#f3f3f3</property>
+        <property name="text" translatable="yes">Junior Problems</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="columnspan">11</property>
+          <property name="pady">15</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+        </layout>
+      </object>
+    </child>
+    <child>
       <object class="tk.Button" id="selectJ1">
         <property name="activebackground">#16A085</property>
         <property name="activeforeground">#FFFFFF</property>
@@ -167,6 +219,24 @@
           <property name="column">9</property>
           <property name="propagate">True</property>
           <property name="row">2</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Label" id="seniorProblemsLabel">
+        <property name="background">#5a6465</property>
+        <property name="font">{Microsoft Sans Serif} 26 {}</property>
+        <property name="foreground">#f3f3f3</property>
+        <property name="height">0</property>
+        <property name="height">0</property>
+        <property name="state">normal</property>
+        <property name="text" translatable="yes">Senior Problems</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="columnspan">11</property>
+          <property name="pady">15</property>
+          <property name="propagate">True</property>
+          <property name="row">3</property>
         </layout>
       </object>
     </child>
@@ -260,76 +330,6 @@
         </layout>
       </object>
     </child>
-    <child>
-      <object class="tk.Label" id="juniorProblemsLabel">
-        <property name="background">#5a6465</property>
-        <property name="font">{Microsoft Sans Serif} 26 {}</property>
-        <property name="foreground">#1e3a9b</property>
-        <property name="text" translatable="yes">Junior Problems</property>
-        <layout>
-          <property name="column">0</property>
-          <property name="columnspan">11</property>
-          <property name="pady">15</property>
-          <property name="propagate">True</property>
-          <property name="row">1</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Label" id="seniorProblemsLabel">
-        <property name="background">#5a6465</property>
-        <property name="font">{Microsoft Sans Serif} 26 {}</property>
-        <property name="foreground">#1e3a9b</property>
-        <property name="height">0</property>
-        <property name="height">0</property>
-        <property name="state">normal</property>
-        <property name="text" translatable="yes">Senior Problems</property>
-        <layout>
-          <property name="column">0</property>
-          <property name="columnspan">11</property>
-          <property name="pady">15</property>
-          <property name="propagate">True</property>
-          <property name="row">3</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="ttk.Combobox" id="yearSelector">
-        <property name="state">readonly</property>
-        <property name="textvariable">int:yearSelected</property>
-        <property name="validate">none</property>
-        <property name="values">2018 2017 2016 2015 2014 2013 2012</property>
-        <property name="width">5</property>
-        <layout>
-          <property name="column">0</property>
-          <property name="columnspan">11</property>
-          <property name="propagate">True</property>
-          <property name="row">0</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Frame" id="placeHolder">
-        <property name="background">#5a6465</property>
-        <layout>
-          <property name="column">10</property>
-          <property name="propagate">True</property>
-          <property name="row">0</property>
-          <property name="rowspan">5</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Frame" id="placeHolder2">
-        <property name="background">#5a6465</property>
-        <layout>
-          <property name="column">0</property>
-          <property name="propagate">True</property>
-          <property name="row">0</property>
-          <property name="rowspan">5</property>
-        </layout>
-      </object>
-    </child>
   </object>
   <object class="tk.Frame" id="testBench">
     <property name="background">#5a6465</property>
@@ -349,39 +349,100 @@
         <row id="1">
           <property name="minsize">0</property>
           <property name="pad">25</property>
+          <property name="weight">1</property>
         </row>
         <row id="2">
           <property name="pad">25</property>
         </row>
         <row id="3">
           <property name="pad">25</property>
-        </row>
-        <row id="4">
-          <property name="pad">25</property>
-        </row>
-        <row id="5">
-          <property name="pad">25</property>
-        </row>
-        <row id="6">
-          <property name="pad">25</property>
+          <property name="weight">3</property>
         </row>
       </rows>
       <columns>
         <column id="0">
           <property name="pad">50</property>
+          <property name="weight">0</property>
         </column>
         <column id="1">
           <property name="pad">0</property>
+          <property name="weight">1</property>
         </column>
       </columns>
     </layout>
     <child>
-      <object class="ttk.Combobox" id="outputSelector">
+      <object class="tk.Button" id="backButton">
+        <property name="borderwidth">2</property>
+        <property name="command">back</property>
+        <property name="font">{Microsoft Sans Serif} 14 {}</property>
+        <property name="padx">16</property>
+        <property name="text" translatable="yes">Back</property>
         <layout>
-          <property name="column">2</property>
+          <property name="column">0</property>
+          <property name="padx">8</property>
+          <property name="pady">8</property>
           <property name="propagate">True</property>
           <property name="row">0</property>
         </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Combobox" id="outputSelector">
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Frame" id="testControls">
+        <property name="background">#5a6465</property>
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+        </layout>
+        <child>
+          <object class="pygubu.builder.widgets.pathchooserinput" id="filePicker">
+            <property name="type">file</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="test">
+            <property name="command">test</property>
+            <property name="padx">20</property>
+            <property name="pady">8</property>
+            <property name="text" translatable="yes">  Test All   </property>
+            <layout>
+              <property name="column">0</property>
+              <property name="pady">16</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="testSelected">
+            <property name="command">testSel</property>
+            <property name="padx">20</property>
+            <property name="pady">8</property>
+            <property name="text" translatable="yes">Test Selected</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="padx">16</property>
+              <property name="propagate">True</property>
+              <property name="row">3</property>
+            </layout>
+          </object>
+        </child>
       </object>
     </child>
     <child>
@@ -389,20 +450,29 @@
         <property name="scrolltype">both</property>
         <property name="usemousewheel">true</property>
         <layout>
-          <property name="column">2</property>
-          <property name="padx">0</property>
-          <property name="pady">0</property>
+          <property name="column">1</property>
           <property name="propagate">True</property>
           <property name="row">1</property>
-          <property name="rowspan">5</property>
           <rows>
             <row id="0">
               <property name="minsize">0</property>
+              <property name="weight">1</property>
             </row>
             <row id="1">
               <property name="minsize">0</property>
             </row>
           </rows>
+          <columns>
+            <column id="0">
+              <property name="weight">1</property>
+            </column>
+            <column id="1">
+              <property name="weight">0</property>
+            </column>
+            <column id="2">
+              <property name="weight">0</property>
+            </column>
+          </columns>
         </layout>
         <child>
           <object class="tk.Text" id="terminal">
@@ -420,60 +490,68 @@
       </object>
     </child>
     <child>
-      <object class="tk.Button" id="backButton">
-        <property name="command">back</property>
-        <property name="font">{Microsoft Sans Serif} 14 {}</property>
-        <property name="padx">16</property>
-        <property name="text" translatable="yes">Back</property>
-        <layout>
-          <property name="column">0</property>
-          <property name="padx">8</property>
-          <property name="pady">8</property>
-          <property name="propagate">True</property>
-          <property name="row">0</property>
-          <property name="sticky">nw</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Button" id="test">
-        <property name="font">{Microsoft Sans Serif} 12 {}</property>
-        <property name="text" translatable="yes">Test All</property>
-        <layout>
-          <property name="column">0</property>
-          <property name="propagate">True</property>
-          <property name="row">2</property>
-          <property name="sticky">s</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Button" id="testSelected">
-        <property name="font">{Microsoft Sans Serif} 12 {}</property>
-        <property name="text" translatable="yes">Test Selected</property>
-        <layout>
-          <property name="column">0</property>
-          <property name="propagate">True</property>
-          <property name="row">3</property>
-          <property name="sticky">n</property>
-        </layout>
-      </object>
-    </child>
-    <child>
-      <object class="tk.Frame" id="testContainer">
+      <object class="tk.Frame" id="selectionButtons">
+        <property name="background">#5a6465</property>
         <property name="height">200</property>
         <property name="width">200</property>
         <layout>
           <property name="column">0</property>
-          <property name="columnspan">4</property>
+          <property name="columnspan">2</property>
+          <property name="pady">10</property>
           <property name="propagate">True</property>
-          <property name="row">6</property>
+          <property name="row">2</property>
+        </layout>
+        <child>
+          <object class="tk.Button" id="none">
+            <property name="borderwidth">2</property>
+            <property name="command">deselectAll</property>
+            <property name="font">{Microsoft Sans Serif} 12 {}</property>
+            <property name="pady">8</property>
+            <property name="text" translatable="yes">Deselect All</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="all">
+            <property name="borderwidth">2</property>
+            <property name="command">selectAll</property>
+            <property name="font">{Microsoft Sans Serif} 12 {}</property>
+            <property name="pady">8</property>
+            <property name="text" translatable="yes">Select All</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Text" id="testContainer">
+        <property name="background">#5a6465</property>
+        <property name="borderwidth">2</property>
+        <property name="cursor">arrow</property>
+        <property name="height">3</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="columnspan">2</property>
+          <property name="propagate">True</property>
+          <property name="row">3</property>
           <rows>
             <row id="0">
               <property name="pad">15</property>
+              <property name="weight">1</property>
             </row>
             <row id="1">
               <property name="pad">15</property>
+              <property name="weight">1</property>
             </row>
             <row id="2">
               <property name="pad">15</property>
@@ -491,88 +569,21 @@
           <columns>
             <column id="0">
               <property name="pad">40</property>
+              <property name="weight">1</property>
             </column>
             <column id="1">
               <property name="pad">40</property>
+              <property name="weight">1</property>
             </column>
             <column id="2">
               <property name="pad">40</property>
+              <property name="weight">1</property>
+            </column>
+            <column id="3">
+              <property name="weight">1</property>
             </column>
           </columns>
         </layout>
-        <child>
-          <object class="tk.Button" id="all">
-            <property name="font">{Microsoft Sans Serif} 12 {}</property>
-            <property name="text" translatable="yes">Select All</property>
-            <layout>
-              <property name="column">0</property>
-              <property name="columnspan">2</property>
-              <property name="padx">5</property>
-              <property name="propagate">True</property>
-              <property name="row">0</property>
-              <property name="sticky">e</property>
-            </layout>
-          </object>
-        </child>
-        <child>
-          <object class="tk.Button" id="none">
-            <property name="font">{Microsoft Sans Serif} 12 {}</property>
-            <property name="text" translatable="yes">Deselect All</property>
-            <layout>
-              <property name="column">2</property>
-              <property name="columnspan">2</property>
-              <property name="padx">5</property>
-              <property name="propagate">True</property>
-              <property name="row">0</property>
-              <property name="sticky">w</property>
-            </layout>
-          </object>
-        </child>
-        <child>
-          <object class="ttk.Checkbutton" id="Checkbutton_1">
-            <property name="state">normal</property>
-            <property name="text" translatable="yes">Checkbutton_1</property>
-            <property name="width">15</property>
-            <layout>
-              <property name="column">0</property>
-              <property name="propagate">True</property>
-              <property name="row">1</property>
-            </layout>
-          </object>
-        </child>
-        <child>
-          <object class="ttk.Checkbutton" id="Checkbutton_2">
-            <property name="text" translatable="yes">Checkbutton_2</property>
-            <property name="width">15</property>
-            <layout>
-              <property name="column">1</property>
-              <property name="propagate">True</property>
-              <property name="row">1</property>
-            </layout>
-          </object>
-        </child>
-        <child>
-          <object class="ttk.Checkbutton" id="Checkbutton_3">
-            <property name="text" translatable="yes">Checkbutton_3</property>
-            <property name="width">15</property>
-            <layout>
-              <property name="column">2</property>
-              <property name="propagate">True</property>
-              <property name="row">1</property>
-            </layout>
-          </object>
-        </child>
-        <child>
-          <object class="ttk.Checkbutton" id="Checkbutton_10">
-            <property name="text" translatable="yes">Checkbutton_10</property>
-            <property name="width">15</property>
-            <layout>
-              <property name="column">3</property>
-              <property name="propagate">True</property>
-              <property name="row">1</property>
-            </layout>
-          </object>
-        </child>
       </object>
     </child>
   </object>
