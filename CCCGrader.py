@@ -4,20 +4,25 @@ import pygubu
 import glob
 import os
 
-import codeCompare
+import codeTester
 
 
-class testCaseManager:
+class TestCaseManager:
 
     container = object()
     checkboxList = []
-    varList={}
+    varList={} #for retriving the state of boxs
 
     def __init__(self, filelist, container):
         self.container = container
+
+        #clean previous state
         container.delete(1.0, tk.END)
+        self.checkboxList = []
+
         for i in filelist:
             self.addCheckbox(i)
+
         self.selectAll()
     
     def addCheckbox(self, filename):
@@ -26,6 +31,7 @@ class testCaseManager:
         newCheckbox.config(bg='#5a6465')
         newCheckbox.config(activebackground='#5a6465')
         newCheckbox.config(font=Font(family="Microsoft Sans Serif", size=14))
+
         self.varList[filename] = tk.IntVar()
         newCheckbox.config(var=self.varList[filename])
         self.container.window_create(tk.INSERT, window=newCheckbox)
@@ -39,9 +45,6 @@ class testCaseManager:
         for key, value in self.varList.items():
             if value.get():
                 fileList.append(key)
-
-        
-        print(fileList)
         return fileList
     
     #mass modify functions
@@ -91,9 +94,8 @@ class Application:
         self.testControls = self.builder.get_object('testControls', self.master)
         self.outputSelector = self.builder.get_object('outputSelector', self.master)
         self.selectionButtons = self.builder.get_object('selectionButtons', self.master)
-        
-        #mainwindow config
-        #self.master.bind('<Configure>', self.resize)
+
+        """mainwindow config"""
         self.master.minsize(1000, 600)
 
         #init and place fonts
@@ -103,36 +105,36 @@ class Application:
         self.yearSelector.config(font=self.textFont)
         self.outputSelector.config(font=self.textFont)
 
-        #configure expansion
-        self.probSelect.grid(sticky=(tk.N, tk.S, tk.E, tk.W))
-        self.testBench.grid(sticky=(tk.N, tk.S, tk.E, tk.W))
+        #configure expansion 
         master.rowconfigure(0, weight=1)
         master.columnconfigure(0, weight=1)
-
+        self.probSelect.grid(sticky=(tk.N, tk.S, tk.E, tk.W))
+        self.testBench.grid(sticky=(tk.N, tk.S, tk.E, tk.W))
         self.terminalScroller.grid(sticky=(tk.N, tk.S, tk.E, tk.W))
         self.testContainer.grid(sticky=(tk.N, tk.S, tk.E, tk.W))
 
+
+        #apply font and sticky settings
         for i in self.probSelect.winfo_children():
             if isinstance(i, tk.Button):
                 i.config(font=self.buttonFont)
                 i.grid(sticky=(tk.N, tk.S, tk.E, tk.W))
-
         for i in self.testBench.winfo_children():
             if isinstance(i, tk.Button):
                 i.config(font=self.textFont)
         for i in self.testControls.winfo_children():
             if isinstance(i, tk.Button):
                 i.config(font=self.textFont)
+            i.grid(sticky=(tk.N, tk.S, tk.E, tk.W))
         for i in self.selectionButtons.winfo_children():
             if isinstance(i, tk.Button):
                 i.config(font=self.textFont)
 
 
         self.outputSelector.grid(sticky=(tk.E, tk.W))
-        
-        #show window
         self.showSelector()
 
+        #create and connect callback functions
         callbacks = {
         'J1': lambda: self.selectionMade("J1"),
         'J2': lambda: self.selectionMade("J2"),
@@ -151,6 +153,8 @@ class Application:
         'deselectAll': lambda: self.tcm.deselectAll()
         }
         self.builder.connect_callbacks(callbacks)
+
+    """gui event handlers"""
 
     #show selection window
     def showSelector(self):
@@ -172,8 +176,7 @@ class Application:
             name, _ = os.path.splitext(filename)
             nameList.append(name)
 
-        self.tcm = testCaseManager(nameList, self.testContainer)
-        
+        self.tcm = TestCaseManager(nameList, self.testContainer)
     
     def test(self):
         print("Testing All")
@@ -192,6 +195,6 @@ application = Application(root)
 #root.resizable(False, False)
 
 
-#codeCompare.test("2018q3sol.exe", "windows_data\S3\s3.3-02.in", b'temp')
+#codeTester.test("2018q3sol.exe", "windows_data\S3\s3.3-02.in", b'temp')
 
 root.mainloop()

@@ -125,7 +125,7 @@
         <layout>
           <property name="column">0</property>
           <property name="columnspan">11</property>
-          <property name="pady">15</property>
+          <property name="pady">20</property>
           <property name="propagate">True</property>
           <property name="row">1</property>
         </layout>
@@ -234,7 +234,7 @@
         <layout>
           <property name="column">0</property>
           <property name="columnspan">11</property>
-          <property name="pady">15</property>
+          <property name="pady">20</property>
           <property name="propagate">True</property>
           <property name="row">3</property>
         </layout>
@@ -349,14 +349,14 @@
         <row id="1">
           <property name="minsize">0</property>
           <property name="pad">25</property>
-          <property name="weight">1</property>
+          <property name="weight">3</property>
         </row>
         <row id="2">
           <property name="pad">25</property>
         </row>
         <row id="3">
           <property name="pad">25</property>
-          <property name="weight">3</property>
+          <property name="weight">1</property>
         </row>
       </rows>
       <columns>
@@ -410,6 +410,7 @@
             <property name="type">file</property>
             <layout>
               <property name="column">0</property>
+              <property name="pady">16</property>
               <property name="propagate">True</property>
               <property name="row">1</property>
             </layout>
@@ -437,7 +438,7 @@
             <property name="text" translatable="yes">Test Selected</property>
             <layout>
               <property name="column">0</property>
-              <property name="padx">16</property>
+              <property name="pady">16</property>
               <property name="propagate">True</property>
               <property name="row">3</property>
             </layout>
